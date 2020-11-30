@@ -1,0 +1,72 @@
+﻿
+@model IEnumerable<MVC_EF_Start.Models.StateCandidates>
+
+<!DOCTYPE html>
+
+<html>
+
+<title>U.S. 2019-2020 CANDIDATE INFORMATION</title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+
+    <div id="FEC Funding Information" class="tabcontent">
+
+        <div class="jumbotron jumbotron-fluid" id="Candidate data">
+
+            <div class="container">
+
+                <h1 class="display-4" style="color:black">FEC Funding Data</h1>
+
+                <p1 class="lead">The table provided contains funding information related to the U.S. 2020 election candidates and their respective committees, parties and states as provided by the FEC.</p1>
+                <p1 class="lead">Table data can be filtered by any of the below categories: </p1>
+            </div></p>
+
+        </div>
+
+<br>
+
+        <table class="cinereousTable">
+
+            <tr>
+
+                <th>Candidate Name</th>
+                <th>Committee Name</th>
+                <th>Party Name</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Funding</th>
+                <th>Debts</th>
+
+            </tr>
+
+            @foreach (var item in Model)
+
+            {
+
+                <tr>
+
+                    <td>@item.name</td>
+                    <td>@item.comname</td>
+                    <td>@item.pname</td>
+
+                    <td>@item.city</td>
+
+                    <td>@item.state</td>
+                    <td>$@item.funding</td>
+
+                    <td>$@item.debts</td>
+
+
+
+                </tr>
+            }
+
+        </table>
+
+    </div>
+
+</head>
